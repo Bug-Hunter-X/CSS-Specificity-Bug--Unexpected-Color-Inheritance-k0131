@@ -1,0 +1,25 @@
+The following CSS code snippet demonstrates an unusual issue related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green; /* This rule should override the div and p rules */
+}
+
+.special-class p {
+  color: purple; /* This rule should have higher specificity */
+}
+
+<div>
+  <p class="special-class">This text should be purple.</p>
+</div>
+```
+
+The expected outcome is that the text within the paragraph with the class "special-class" should be purple because of the specificity of the `.special-class p` rule. However, the text might appear green or even red if there is a subtle problem with specificity calculation, particularly when dealing with complex selectors or inheritance.
