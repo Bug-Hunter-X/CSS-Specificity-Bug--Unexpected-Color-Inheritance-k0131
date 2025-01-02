@@ -1,0 +1,26 @@
+The solution involves ensuring the `.special-class p` rule has higher specificity than the other rules:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green; /* Less specific */
+}
+
+.special-class p {
+  color: purple; /* More specific */
+}
+
+/* Optionally, you can use the `!important` flag for overriding other rules, but this should be used sparingly */
+.special-class p {
+  color: purple !important; /* Explicitly override */
+}
+```
+
+By adjusting the selectors or using the `!important` flag (though generally not recommended), the expected color can be achieved. The corrected CSS code is now correctly applying the `purple` color because of higher specificity.
